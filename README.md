@@ -1,6 +1,6 @@
 # Android Project 2 - *MyWishList*
 
-Submitted by: **Grace**
+Submitted by: **Grace Diep**
 
 **MyWishList** is a wishlist app that helps the user keep track of what they want to buy.
 
