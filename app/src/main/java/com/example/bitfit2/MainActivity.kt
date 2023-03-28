@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
-    var healthList: MutableList<Health> = mutableListOf()
+    private var healthList: MutableList<Health> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity() {
 
         val submitButton = findViewById<Button>(R.id.submitButton)
         val name = findViewById<EditText>(R.id.foodEt)
-        val price = findViewById<EditText>(R.id.caloriesEt)
+        val calories = findViewById<EditText>(R.id.caloriesEt)
         val recyclerView = findViewById<RecyclerView>(R.id.healthRv)
 
-        var adapter = HealthAdapter(healthList)
+        val adapter = HealthAdapter(healthList)
         recyclerView.adapter = adapter
 
         lifecycleScope.launch {
@@ -43,20 +43,21 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.layoutManager = LinearLayoutManager(this).also {
 
-        submitButton.setOnClickListener {
-            val _name = name.text.toString()
-            val _price = price.text.toString()
-            var item = Health(_name, _price)
+            submitButton.setOnClickListener {
+                val _name = name.text.toString()
+                val _calories = calories.text.toString()
+                val item = Health(_name, _calories)
 
-            healthList.add(item)
-            adapter.notifyDataSetChanged()
+                healthList.add(item)
+                adapter.notifyDataSetChanged()
 
-            name.text.clear()
-            price.text.clear()
+                name.text.clear()
+                calories.text.clear()
 
-            hideKeyboard()
+                hideKeyboard()
+            }
         }
     }
 
