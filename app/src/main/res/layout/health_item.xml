@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/nameTv"
+        android:id="@+id/foodTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="item name"
@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/priceTv"
+        android:id="@+id/caloriesTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:hint="price"
@@ -23,15 +23,6 @@
         android:paddingTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/urlTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="url of item"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameTv" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.mywishlist
+package com.example.bitfit2
 
 import org.junit.Test
 

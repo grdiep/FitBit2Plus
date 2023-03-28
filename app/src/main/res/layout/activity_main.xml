@@ -7,11 +7,11 @@
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/wishlistRv"
+        android:id="@+id/healthRv"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toTopOf="@+id/nameEt"
+        app:layout_constraintBottom_toTopOf="@+id/foodEt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,34 +19,25 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/nameEt"
+        android:id="@+id/foodEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
         android:ems="10"
         android:hint="Item name"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/urlEt"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/priceEt"
+        android:id="@+id/caloriesEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="7"
-        android:hint="Item price"
+        android:hint="Calories"
         android:inputType="numberDecimal|numberSigned"
         app:layout_constraintBottom_toTopOf="@+id/submitButton"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/urlEt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Item url"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/submitButton"

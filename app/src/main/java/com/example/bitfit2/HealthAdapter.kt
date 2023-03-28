@@ -1,4 +1,4 @@
-package com.example.mywishlist
+package com.example.bitfit2
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,34 +7,30 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 //adapter will always need an arrayList param
-class WishlistAdapter(private val itemList: List<Wishlist>) : RecyclerView.Adapter<WishlistAdapter.ViewHolder>() {
+class HealthAdapter(private val itemList: List<Health>) : RecyclerView.Adapter<HealthAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView
-        val price: TextView
-        val url: TextView
+        val calories: TextView
 
         init {
-            name = itemView.findViewById(R.id.nameTv)
-            price = itemView.findViewById(R.id.priceTv)
-            url = itemView.findViewById(R.id.urlTv)
+            name = itemView.findViewById(R.id.foodTv)
+            calories = itemView.findViewById(R.id.caloriesTv)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val context = parent.context
         val inflater = LayoutInflater.from(context)
-        val wishlistView = inflater.inflate(R.layout.wishlist_item, parent, false)
-        return ViewHolder(wishlistView)
+        val view = inflater.inflate(R.layout.health_item, parent, false)
+        return ViewHolder(view)
     }
 
     //bind data from the editText to its corresponding view
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //each individual row within recyclerView
-        val item = itemList.get(position)
+        val item = itemList[position]
         holder.name.text = item.name
-        holder.price.text = item.price
-        holder.url.text = item.url
+        holder.calories.text = item.calories
     }
 
     override fun getItemCount(): Int {
